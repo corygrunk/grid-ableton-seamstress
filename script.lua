@@ -12,7 +12,7 @@ local note_display_name = '--'
 
 g = grid.connect() -- if no argument is provided, defaults to port 1
 grid_connected = true
-Midi = midi.connect_output()
+Midi = midi.connect(1)
 
 scale_names = {}
 notes = {} -- this is the table that holds the scales' notes
@@ -43,7 +43,7 @@ function init()
 
   build_scale() -- builds initial scale
 
-  midi:connect_output(1)
+  midi:connect(1)
 
   grid_dirty = true -- initialize with a redraw
   screen_dirty = true -- initialize with a redraw
